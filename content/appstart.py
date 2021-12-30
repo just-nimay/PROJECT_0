@@ -200,6 +200,7 @@ class For_Friends(App):
 		#показывает все что есть в boxlayout
 		return self.bl
 	def chs(self, instance):
+		playsound('music/blip2.wav')
 		#убирает кнопку start
 		self.al.remove_widget(self.bt_start)
 		
@@ -224,6 +225,7 @@ class For_Friends(App):
 		
 	# если пользователь нажал no
 	def presed_no(self, instance):
+		playsound('music/shoot.WAV')
 		#удаление кнопки no
 		self.gl.remove_widget(self.btn_no)
 		self.txt_hello.txt = 'неугадали!'
@@ -231,6 +233,7 @@ class For_Friends(App):
 	# если пользователь нажал yes
 	#LEVEL I 
 	def next_leve1(self, instance):
+		playsound('music/blip2.wav')
 		#удаление ненужных кнопок
 		self.gl.remove_widget(self.btn_yes)
 		self.gl.remove_widget(self.btn_no)
@@ -268,7 +271,7 @@ class For_Friends(App):
 
 	#проверка инпута №1 
 	def checking(self, instance):
-
+		playsound('music/Paste.wav')
 		#присваивание переменной words_1 текста, который находится в text_input
 		words_1 = str(self.text_input.text)
 
@@ -277,7 +280,7 @@ class For_Friends(App):
 
 			#удаление кнопки проверки
 			self.gl.remove_widget(self.btn_check)
-
+			self.gl.remove_widget(self.text_input)
 			#добавление кнопки next_level
 			self.gl.add_widget(self.btn_next_level)
 			#очищение поля текста, видимого для пользователя
@@ -291,6 +294,7 @@ class For_Friends(App):
 
 	# LEVEL_2
 	def level_2(self, instance):
+		playsound('music/blip2.wav')
 		self.gl.add_widget(self.text_input)
 		self.text_input.text = ''
 		#присваивание input'у нового текста подсказки
@@ -313,6 +317,7 @@ class For_Friends(App):
 			self.not_is_lera()
 
 	def here_is_lera(self):
+		playsound('music/blip2.wav')
 		self.gl.remove_widget(self.btn_name)
 		self.text_input.text = ''
 		self.gl.remove_widget(self.text_input)
@@ -320,6 +325,7 @@ class For_Friends(App):
 		self.gl.add_widget(self.btn_thank)
 
 	def not_is_lera(self):
+		playsound('music/Paste.wav')
 		self.gl.remove_widget(self.btn_name)
 		self.text_input.text = ''
 		self.gl.remove_widget(self.text_input)
@@ -327,11 +333,12 @@ class For_Friends(App):
 		self.gl.add_widget(self.btn_thank)
 
 	def main_level_2(self, instance):
+		playsound('music/blip2.wav')
 		self.gl.remove_widget(self.btn_thank)
 		self.gl.remove_widget(self.text_input)
 		#создание трех колон, для трех элементов
 		self.gl.cols = 3
-		
+		self.txt_hello.txt=''
 		self.txt_hello.text = 'ниже есть кнопочка, и если на них нажать, то вылезет картинка \n твоя задача подписать что это за картинка)))'
 
 		self.gl.add_widget(self.btn_img2)
@@ -340,6 +347,7 @@ class For_Friends(App):
 
 
 	def check_img2(self, instance):
+		playsound('music/Paste.wav')
 		#присваивание переменной ansvel текста, который находится в text_input
 		ansvel = str(self.input_img2.text.lower())
 		if ansvel == 'котик' or ansvel == 'cat':
@@ -360,11 +368,13 @@ class For_Friends(App):
 
 	#скример
 	def img2_presed(self, instance):
+		playsound('music/shoot.WAV')
 		#нормальная картинка
 		Image2.go_image2()	
 		
 	#перевод на сайт
 	def go_cite(self, instance):
+		playsound('music/shoot.WAV')
 		self.gl.remove_widget(self.btn_go_cite)
 		webbrowser.open('source/cite.html')
 		self.btn_go_cite.on_press = self.level_4
@@ -379,7 +389,7 @@ class For_Friends(App):
 
 
 	def otziv(self, instance):
-
+		playsound('music/blip2.wav')
 		if self.text_input.text == 'ужасно хорошо':
 			self.txt_hello.text = 'В таком случае могу вас порадовать, разраб этой игры уже трудится над новой, более реальной игрой))'
 			self.gl.remove_widget(self.btn_otziv)
