@@ -46,9 +46,20 @@
                 color: darkmagenta;
             }
             
+            #secret {
+                display: none;
+            }
+            
             @font-face {
                 font-family: 'FirstTimeWriting';
                 src: url('fonts/FirstTimeWriting.ttf')
+            }
+            
+            @media screen and (device-width:820px) {
+                #secret {
+                    display: block;
+                    font-family: monospace;
+                }
             }
         </style>
     </head>
@@ -57,7 +68,8 @@
             <!-- Главная !-->
             <center><h1>КАК ПРИГОТОВИТЬ ЧЕЛОВЕКА</h1></center>
             <h2>Рецепты</h2>
-            <p>простите, но Этой информации больше неТ в дОсупе</p>
+            <p>простите, но Этой информации больше неТ в дОсупе (поиграйся с разрешением)</p>
+            <div id='secret'>пароль доступа: FUCKYOU</div>
         <!-- ссылки !-->
         </div>
         <div class = 'links'>

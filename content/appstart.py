@@ -1,6 +1,3 @@
-#КАК Я МОГУ ВЗАИМОДЕЙСТВОВАТЬ С ИНФОРМАЦИЕЙ ВВЕДЕННОЙ В LABEL KIVY PYTHON
-#КАК МНЕ ОБМЕНИВАТЬСЯ ФУНКЦИЯМИ МЕЖДУ ДВУМЯ ФАЙЛАМИ PYTHOM
-#СДЕЛАТЬ LOVER() Keeglx
 #сделать браузер на пайтоне!!!
 
 
@@ -18,7 +15,7 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.label import Label 
 from kivy.uix.textinput import TextInput 
 
-from choice import Choice 
+#from choice import Choice 
 
 from kivy.uix.widget import Widget 
 
@@ -148,6 +145,14 @@ class For_Friends(App):
 							background_normal = '',
 							background_color = [1, 0, 0, 1],
 							on_press = self.go_cite)
+		self.btn_otziv = Button(
+							text = 'отправить отзыв',
+							font_size=20,
+							size_hint = (None, None),
+							size = (180, 70),
+							background_normal = '',
+							background_color = [1, 0, 0, 1],
+							on_press = self.otziv)
 
 		
 
@@ -185,7 +190,7 @@ class For_Friends(App):
 		self.al_button.add_widget(self.gl)
 		self.bl.add_widget(self.al_button)
 		
-		Choice.main()
+		#Choice.main()
 
 	def presed_no(self, instance):
 		self.gl.remove_widget(self.btn_no)
@@ -316,7 +321,21 @@ class For_Friends(App):
 
 	def level_4(self):
 		self.txt_hello.text = 'как сайт?'
+		self.gl.add_widget(self.text_input)
+		self.text_input.hint_text = 'Отзыв'
+		self.gl.add_widget(self.btn_otziv)
 
+
+	def otziv(self, instance):
+
+		if self.text_input.text == 'ужасно хорошо':
+			self.txt_hello.text = 'В таком случае могу вас порадовать, разраб этой игры уже трудится над новой, более реальной игрой))'
+			self.gl.remove_widget(self.btn_otziv)
+			self.gl.remove_widget(self.text_input)
+		else:
+			self.txt_hello.text = 'Спасибо за отзыв!'
+			self.gl.remove_widget(self.btn_otziv)
+			self.gl.remove_widget(self.text_input)
 
 	def build(self):
 		return self.bald()

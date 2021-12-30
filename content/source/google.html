@@ -14,9 +14,12 @@
         }
         
         #inp {
-            border-radius: 30px;
-            
+            width: 400px;
             height: 40px;
+            border-radius: 30px;
+            border: none;
+            margin-left: -50px;
+            outline: none;
         } 
         
         #btn_1 {
@@ -26,8 +29,10 @@
             border: none;
             width: 70px;
             height: 40px;
-            margin-left: 20px;
+            margin: 20px;
             cursor: pointer;
+            
+            
             
         }
         
@@ -58,6 +63,25 @@
         
         h3 {
             margin-top: 5px;
+        }
+        
+        .search-board {
+            border: 1px solid black;
+            border-radius: 30px;
+            width: 550px;
+        }
+        
+        #srch {
+            margin-top: 10px;
+            margin-left: 15px;
+            float: left;
+        }
+        
+        #close {
+            width: 20px;
+            margin-top: 10px;
+            margin-right: 15px;
+            float: right;
         }
         
         @keyframes err {
@@ -93,15 +117,23 @@
 
 <body>
 
-    <center><img src="img/google_PNG.png" , width="50%"></center>
+    <center>
+        <img src="img/google_PNG.png" width="50%">
+    </center>
     
-
     <center>
         <!-- Поле для ввода !--> 
-        <input list="Search" size="60%" placeholder="Введите поисковый запрос или URL" class="search" id="inp">
+        <div class='search-board'>
+            <img src="img/search.svg" id='srch'>
+            
+            <input list="Search" size="60%" placeholder="Введите поисковый запрос или URL" class="search" id="inp">
+            
+            <a href='#' onclick="clear()"><img src="img/close.png" id='close' ></a>
+        </div>
         <!-- Кнопка "Search" !-->
         <button id="btn_1">Search</button>
     </center>
+    
     <!-- Банк звпросов !-->
     <datalist id="Search">
         <option>как приготовить человека</option>
@@ -109,6 +141,7 @@
         <option>не открывать меня!</option>
         <option>котики</option>
     </datalist>
+    
     <center>
 
         <div id="check">
