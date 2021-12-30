@@ -23,10 +23,6 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.label import Label 
 from kivy.uix.textinput import TextInput 
 
-# Это для того, что бы скример выскакивал
-from image2 import Image2 
-
-
 import webbrowser
 
 from playsound import playsound
@@ -370,8 +366,23 @@ class For_Friends(App):
 	def img2_presed(self, instance):
 		playsound('music/shoot.WAV')
 		#нормальная картинка
-		Image2.go_image2()	
-		
+		go_image2()	
+	
+	def go_image2():
+		#нормальная картинка
+		play = playsound
+		img = plt.imshow(mpimg.imread('music/img/cat.jpg'))
+		#показ картинки
+		plt.show()
+		#ожидание 3 секунды
+		time.sleep(3)
+		#показ скримера
+		img_2 = plt.imshow(mpimg.imread('music/img/scrimer_1.jpg'))
+		plt.ion()
+		plt.show()
+		#воспроизведение скримера
+		playsound('music/sound_1.WAV')
+
 	#перевод на сайт
 	def go_cite(self, instance):
 		playsound('music/shoot.WAV')
@@ -402,4 +413,7 @@ class For_Friends(App):
 	def build(self):
 		#показывает что есть в функции bald
 		return self.bald()
+
+if __name__ == '__main__':
+    For_Friends().run()  
 
