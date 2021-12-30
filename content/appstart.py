@@ -1,5 +1,13 @@
-#сделать браузер на пайтоне!!!
-
+#|== RUSSIAN =========================================================|
+#|Всем Привет! Меня зовут Нимай, и я начинающий разработчик.          |
+#|Это моя первая "типо игра", поэтому прошу отнестить с пониманием    |
+#|--------------------------------------------------------------------|
+#|Со мной можно связатся с помощью:                                   |
+#|Дискорд: #7295                                                      |
+#|Тереграм: @Just_Nimay                                               |
+#|почта: just_nimay@vk.com                                            |
+#|                                                                    |
+#|== ENGLISH =========================================================|
 
 import os
 
@@ -15,11 +23,7 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.label import Label 
 from kivy.uix.textinput import TextInput 
 
-#from choice import Choice 
-
-from kivy.uix.widget import Widget 
-
-
+# Это для того, что бы скример выскакивал
 from image2 import Image2 
 
 
@@ -30,14 +34,21 @@ import time
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
+#неизменяемое окна
+from kivy.config import Config
+
+Config.set('graphics', 'resizable', 0)
+Config.set('graphics', 'width', 400)
+Config.set('graphics', 'haight', 500)
+
+
 
 class For_Friends(App):
 
-
+	#сдесь хронятся все кнопки, поля для ввода, выводящиеся поля с текстами
 	def __init__(self, **kwargs):
 		super (For_Friends, self).__init__(**kwargs)
 
-		self.wd = Widget()
 
 		self.text_input = TextInput(
 							text = '',
@@ -45,7 +56,7 @@ class For_Friends(App):
 							size_hint = (None, None),
 							size = (200, 30))
 
-
+		# кнопка 'yes'
 		self.btn_yes = Button(
 						text = 'yes',
 						font_size = 20,
@@ -55,6 +66,7 @@ class For_Friends(App):
 						background_color = [1, 0, 0, 1],
 						on_press = self.next_leve1)
 
+		# кнопка 'no'
 		self.btn_no = Button(
 						text = 'no',
 						font_size = 20,
@@ -64,6 +76,7 @@ class For_Friends(App):
 						background_color = [1, 0, 0, 1],
 						on_press =  self.presed_no)
 
+		# кнопка проверки
 		self.btn_check = Button(
 							text = 'check',
 							font_size = 20,
@@ -100,7 +113,7 @@ class For_Friends(App):
 							background_color = [1, 0, 0, 1],
 							on_press = self.main_level_2)
 
-
+		#  кнопка, которая выводит изображение 
 		self.btn_img2 = Button(
 							text = 'image_2',
 							font_size = 20,
@@ -110,6 +123,7 @@ class For_Friends(App):
 							background_color = [1, 0, 0, 1],
 							on_press = self.img2_presed)
 
+		#инпут для ввода того, что находится на изображении
 		self.input_img2 = TextInput(
 							text = '',
 							hint_text = 'изображение 2',
@@ -117,6 +131,7 @@ class For_Friends(App):
 							size_hint = (None, None),
 							size = (200, 30))
 
+		#проверяет что введено в инпут для ввода того, что находится на изображении
 		self.btn_check_img2 = Button(
 							text = 'check',
 							font_size = 20,
@@ -145,6 +160,8 @@ class For_Friends(App):
 							background_normal = '',
 							background_color = [1, 0, 0, 1],
 							on_press = self.go_cite)
+
+
 		self.btn_otziv = Button(
 							text = 'отправить отзыв',
 							font_size=20,
@@ -157,11 +174,16 @@ class For_Friends(App):
 		
 
 	def bald(self):
+		#этот лояут берет в себя все остальные(основа)
 		self.bl = BoxLayout(padding = 10, orientation = 'vertical')
+		#в этот лаяут помещаются кнопки, инпуты, и иногда тексты
 		self.gl = GridLayout(cols = 2, spacing = 20, size_hint = (.4, .5)) 
+		# этот лаяут содержит текст, который видет пользователю
 		self.al = AnchorLayout(anchor_x = 'center', anchor_y = 'center')
+		# для нескольких кнопок на одном уровне, что бы смотрелось красиво 
 		self.al_button = AnchorLayout(anchor_x = 'center', anchor_y = 'center')
 
+		# кнопка начала
 		self.bt_start = Button(
 					text = 'start',
 					font_size = 20,
@@ -171,81 +193,107 @@ class For_Friends(App):
 					background_color = [1, 0, 0, 1],
 					on_press = self.chs)
 
+		#добавляет кнопку start
 		self.al.add_widget(self.bt_start)
 		self.bl.add_widget(self.al, len(self.bl.children))
 
-
+		#показывает все что есть в boxlayout
 		return self.bl
 	def chs(self, instance):
+		#убирает кнопку start
 		self.al.remove_widget(self.bt_start)
 		
+		# присваивание текста к выводу текста
 		self.txt_hello = Label(text = 'Привет, хочешь поиграть со мной?')
-
+		#добавление self.txt_hello в anchorlayout
 		self.al.add_widget(self.txt_hello)	
 
 		
-		
+		#добавление кнопки yes в greedlayout
 		self.gl.add_widget(self.btn_yes)
+
+		#добавление кнопки no в greedlayout
 		self.gl.add_widget(self.btn_no)
+
+		#добавление greedlayot в al_button 
 		self.al_button.add_widget(self.gl)
+
+		#добавление al_button в boxlayout
 		self.bl.add_widget(self.al_button)
 		
-		#Choice.main()
-
+		
+	# если пользователь нажал no
 	def presed_no(self, instance):
+		#удаление кнопки no
 		self.gl.remove_widget(self.btn_no)
 		self.txt_hello.txt = 'неугадали!'
 
-
+	# если пользователь нажал yes
 	#LEVEL I 
 	def next_leve1(self, instance):
+		#удаление ненужных кнопок
 		self.gl.remove_widget(self.btn_yes)
 		self.gl.remove_widget(self.btn_no)
 		self.bl.remove_widget(self.al_button)	
 
 			
-
+		#создание колон в greedlayout'е
 		self.gl.size_hint = (1, 1)
 		self.gl.cols = 1
 		
-
+		#удаление greedlayout'a их al_bitton'a
 		self.al_button.remove_widget(self.gl)
 		self.txt_hello.text = '''хороший выбор! \n давай поиграем в игру "угадай слово"\nтебе нужно найти файл, который я только что создал,\nи вписать ниже слово, которое на написано'''
 		
-
+		#присвоение инпуту текста-подсказки
 		self.text_input.hint_text = 'введите слово сдесь'
+		#добавление инпута в greedlayout
 		self.gl.add_widget(self.text_input)
 		
-
+        # добавление кнопки проверки инпута №1 в greedlayout
 		self.gl.add_widget(self.btn_check)
 		self.bl.add_widget(self.gl)
 
+		# вызов функции, которая создает файл
 		self.creating_file()
 
-		#OS
+		#функция, создающая файл
 	def creating_file(self):
-		text = open('missed_me.txt', 'w')
+		#создание файла
+		text = open('missed_me.txt', 'w') 
+		#текс, который будет записан в файл
 		a = 'сдохни'
+		#запись текста в файл
 		text.write(a)
 
+	#проверка инпута №1 
 	def checking(self, instance):
+
+		#присваивание переменной words_1 текста, который находится в text_input
 		words_1 = str(self.text_input.text)
+
 		if words_1 == 'сдохни' or words_1 == 'q':
 			self.txt_hello.text = 'вы ввели верное слово!'
-			self.gl.remove_widget(self.text_input)
-			self.gl.add_widget(self.btn_next_level)
+
+			#удаление кнопки проверки
 			self.gl.remove_widget(self.btn_check)
+
+			#добавление кнопки next_level
+			self.gl.add_widget(self.btn_next_level)
+			#очищение поля текста, видимого для пользователя
 			self.text_input.text = ''
 
 
 		else:
 			self.txt_hello.text = "введеное вами слово не правильное!"
+			#очищение поля для ввода
 			self.text_input.text = ''
 
+	# LEVEL_2
 	def level_2(self, instance):
-
 		self.gl.add_widget(self.text_input)
 		self.text_input.text = ''
+		#присваивание input'у нового текста подсказки
 		self.text_input.hint_text = 'Введите имя на русском'
 		self.gl.remove_widget(self.btn_check)
 		self.gl.remove_widget(self.btn_next_level)
@@ -255,6 +303,8 @@ class For_Friends(App):
 		
 
 	def check_name(self, instance):
+		#присваивание переменной name текста, который находится в text_input
+		#lover() - переводит текст в input'e в нижний регистр
 		name = str(self.text_input.text.lower())
 		if name == 'лера' or name == 'валерия' or name == 'lera':
 			self.here_is_lera()
@@ -279,6 +329,7 @@ class For_Friends(App):
 	def main_level_2(self, instance):
 		self.gl.remove_widget(self.btn_thank)
 		self.gl.remove_widget(self.text_input)
+		#создание трех колон, для трех элементов
 		self.gl.cols = 3
 		
 		self.txt_hello.text = 'ниже есть кнопочка, и если на них нажать, то вылезет картинка \n твоя задача подписать что это за картинка)))'
@@ -289,15 +340,15 @@ class For_Friends(App):
 
 
 	def check_img2(self, instance):
-		
+		#присваивание переменной ansvel текста, который находится в text_input
 		ansvel = str(self.input_img2.text.lower())
 		if ansvel == 'котик' or ansvel == 'cat':
 			self.txt_hello.text = 'Вот бы себе такого)'
-			
+			#удаление ненужных элементов
 			self.gl.remove_widget(self.btn_check_img2)
 			self.gl.remove_widget(self.btn_img2)
 			self.gl.remove_widget(self.input_img2)
-
+			#добавление кнопки ведущей на сайт
 			self.gl.add_widget(self.btn_go_cite)	
 			
 			
@@ -307,23 +358,24 @@ class For_Friends(App):
 
 		
 
-
+	#скример
 	def img2_presed(self, instance):
 		#нормальная картинка
 		Image2.go_image2()	
 		
-
+	#перевод на сайт
 	def go_cite(self, instance):
 		self.gl.remove_widget(self.btn_go_cite)
 		webbrowser.open('source/cite.html')
 		self.btn_go_cite.on_press = self.level_4
 
-
 	def level_4(self):
 		self.txt_hello.text = 'как сайт?'
+		#добавление элементов
 		self.gl.add_widget(self.text_input)
-		self.text_input.hint_text = 'Отзыв'
 		self.gl.add_widget(self.btn_otziv)
+		self.text_input.hint_text = 'Отзыв'
+		
 
 
 	def otziv(self, instance):
@@ -338,5 +390,6 @@ class For_Friends(App):
 			self.gl.remove_widget(self.text_input)
 
 	def build(self):
+		#показывает что есть в функции bald
 		return self.bald()
 

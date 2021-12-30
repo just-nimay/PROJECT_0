@@ -10,12 +10,15 @@ class Image2(App):
 		#нормальная картинка
 		play = playsound
 		img = plt.imshow(mpimg.imread('music/img/cat.jpg'))
+		#показ картинки
 		plt.show()
-
+		#ожидание 3 секунды
 		time.sleep(3)
+		#показ скримера
 		img_2 = plt.imshow(mpimg.imread('music/img/scrimer_1.jpg'))
 		plt.ion()
 		plt.show()
+		#воспроизведение скримера
 		playsound('music/sound_1.WAV')
 		
 		
