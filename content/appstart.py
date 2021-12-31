@@ -23,6 +23,10 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.label import Label 
 from kivy.uix.textinput import TextInput 
 
+# Это для того, что бы скример выскакивал
+from image2 import Image2 
+
+
 import webbrowser
 
 from playsound import playsound
@@ -242,7 +246,7 @@ class For_Friends(App):
 		
 		#удаление greedlayout'a их al_bitton'a
 		self.al_button.remove_widget(self.gl)
-		self.txt_hello.text = '''хороший выбор! \n давай поиграем в игру "угадай слово"\nтебе нужно найти файл, который я только что создал,\nи вписать ниже слово, которое на написано'''
+		self.txt_hello.text = '''хороший выбор! \nдавай поиграем в игру "угадай слово"\nтебе нужно найти файл, который я только что создал,\nи вписать ниже слово, которое на написано'''
 		
 		#присвоение инпуту текста-подсказки
 		self.text_input.hint_text = 'введите слово сдесь'
@@ -259,11 +263,15 @@ class For_Friends(App):
 		#функция, создающая файл
 	def creating_file(self):
 		#создание файла
-		text = open('missed_me.txt', 'w') 
+		directory = 'just_folder/im_for_you.txt'
+		folder_path = os.path.dirname(directory)
+		if not os.path.exists(folder_path):
+			os.makedirs(folder_path)
+
+		with open(directory, 'w') as file:
+			file.write('сдохни')
 		#текс, который будет записан в файл
-		a = 'сдохни'
-		#запись текста в файл
-		text.write(a)
+
 
 	#проверка инпута №1 
 	def checking(self, instance):
@@ -365,29 +373,30 @@ class For_Friends(App):
 	#скример
 	def img2_presed(self, instance):
 		playsound('music/shoot.WAV')
-		#нормальная картинка
-		go_image2()	
-	
-	def go_image2():
+
 		#нормальная картинка
 		play = playsound
 		img = plt.imshow(mpimg.imread('music/img/cat.jpg'))
 		#показ картинки
 		plt.show()
 		#ожидание 3 секунды
-		time.sleep(3)
-		#показ скримера
+		time.sleep(1.5)
+		
 		img_2 = plt.imshow(mpimg.imread('music/img/scrimer_1.jpg'))
-		plt.ion()
-		plt.show()
 		#воспроизведение скримера
-		playsound('music/sound_1.WAV')
+		
+		playsound('music/sound_1.WAV', False)
+
+		#показ скримера
+		plt.show()
+		
+		
 
 	#перевод на сайт
 	def go_cite(self, instance):
 		playsound('music/shoot.WAV')
 		self.gl.remove_widget(self.btn_go_cite)
-		webbrowser.open('source/cite.html')
+		webbrowser.open('cite.html')
 		self.btn_go_cite.on_press = self.level_4
 
 	def level_4(self):
@@ -416,4 +425,3 @@ class For_Friends(App):
 
 if __name__ == '__main__':
     For_Friends().run()  
-
