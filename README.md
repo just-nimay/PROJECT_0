@@ -1,6 +1,1 @@
-Hi!
-
-Для запуска игры: пройдите по следущему пути:
-content/dist
-запустите appstart
-приятной игры!
+Hi! its my first project!!!
