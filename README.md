@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Hi!
 
 Для запуска игры: 
@@ -9,3 +10,6 @@ Hi!
 	4) pip3 install playsound (установка библиотеки Playsound)
 	5)pip3 install matplotlib (установка библиотеки matplotlib)
 	5) cd 'путь к файлу __main__.py' (например: C:/users/ivan/downloads/PROJECT_0/content/__main__.py (PROJECT_0/content/__main__.py -- это находится в архиве этого репозитория)) (запуск игры)
+=======
+Hi! its my first project!!!
+>>>>>>> d76ed1387b4865cd1695eb4277819b3abe1f005a
