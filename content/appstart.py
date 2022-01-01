@@ -317,6 +317,8 @@ class For_Friends(App):
 		if name == 'лера' or name == 'валерия' or name == 'lera':
 			self.here_is_lera()
 
+		elif name =='':
+			self.txt_hello.text = 'ну нет, так не пойдет. \n вводи свое имя'
 		else:
 			self.not_is_lera()
 
@@ -394,9 +396,13 @@ class For_Friends(App):
 
 	#перевод на сайт
 	def go_cite(self, instance):
+		new = 2 # open in a new tab, if possible
 		playsound('music/shoot.WAV')
 		self.gl.remove_widget(self.btn_go_cite)
-		webbrowser.open('cite.html')
+		directory = os.getcwd()
+		url = 'file://{}/site.html'.format(directory)
+		print('url: ' + url, directory)
+		webbrowser.open(url)
 		self.btn_go_cite.on_press = self.level_4
 
 	def level_4(self):
