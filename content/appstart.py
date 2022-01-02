@@ -279,7 +279,7 @@ class For_Friends(App):
 		#присваивание переменной words_1 текста, который находится в text_input
 		words_1 = str(self.text_input.text)
 
-		if words_1 == 'сдохни' or words_1 == 'q':
+		if 'сдохни' in words_1  or'q' in words_1:
 			self.txt_hello.text = 'вы ввели верное слово!'
 
 			#удаление кнопки проверки
@@ -314,11 +314,16 @@ class For_Friends(App):
 		#присваивание переменной name текста, который находится в text_input
 		#lover() - переводит текст в input'e в нижний регистр
 		name = str(self.text_input.text.lower())
-		if name == 'лера' or name == 'валерия' or name == 'lera':
+		if 'лера' in name or 'валерия' in name or 'lera' in name:
 			self.here_is_lera()
 
 		elif name =='':
 			self.txt_hello.text = 'ну нет, так не пойдет. \n вводи свое имя'
+
+		elif len(name) < 2:
+			self.txt_hello.text = 'у тебя такое короткое имя? не ври, вводи нормальное'
+		elif 'нимай' in name:
+			self.txt_hello.text = 'давай не прикидывайся, я знаю что это не твое имя.'
 		else:
 			self.not_is_lera()
 
@@ -356,7 +361,7 @@ class For_Friends(App):
 		playsound('music/Paste.wav')
 		#присваивание переменной ansvel текста, который находится в text_input
 		ansvel = str(self.input_img2.text.lower())
-		if ansvel == 'котик' or ansvel == 'cat':
+		if 'котик' in ansvel or 'cat' in ansvel:
 			self.txt_hello.text = 'Вот бы себе такого)'
 			#удаление ненужных элементов
 			self.gl.remove_widget(self.btn_check_img2)
@@ -396,13 +401,13 @@ class For_Friends(App):
 
 	#перевод на сайт
 	def go_cite(self, instance):
-		new = 2 # open in a new tab, if possible
+		
 		playsound('music/shoot.WAV')
 		self.gl.remove_widget(self.btn_go_cite)
 		directory = os.getcwd()
-		url = 'file://{}/site.html'.format(directory)
-		print('url: ' + url, directory)
+		url = 'file:///{}/source/cite.html'.format(directory)
 		webbrowser.open(url)
+		print(directory)
 		self.btn_go_cite.on_press = self.level_4
 
 	def level_4(self):
