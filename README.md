@@ -19,7 +19,7 @@ Hi!
 		7) python3 -m pip install kivy[base] 
 		8) pip3 install playsound (установка библиотеки Playsound)
 		9)pip3 install matplotlib (установка библиотеки matplotlib)
-		10)python3 __main__.py
+		10)python3 __main__.py (запуск игры)
 
 
 
