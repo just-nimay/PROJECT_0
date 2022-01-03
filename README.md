@@ -1,25 +1,47 @@
-
-Hi!
-
-Для запуска игры: 
-1) скачать архив с гитхаба: https://github.com/just-nimay/PROJECT_0.git (нажмите кнопку "code" -> нажмите download ZIP)
-2) установить python версии не менее 3.6
-3) откройте консоль и введите (это уснановка библиотеки Kivy для Python)
-ДЛЯ LINUX
-    	4) sudo apt install python3-pip
-	5) python3 -m pip install kivy[base]
-	6) pip3 install playsound (установка библиотеки Playsound)
-	7)pip3 install matplotlib (установка библиотеки matplotlib)
-	8) cd 'путь к файлу __main__.py' (например: C:/users/ivan/downloads/PROJECT_0/content/__main__.py (PROJECT_0/content/__main__.py -- это находится в архиве этого репозитория))
-	9) python3 __main__.py (запуск игры)
-ДЛЯ WINDOWS
-	4) cd "путь к скачаной разархивированной папке content" (например: cd "C:/users/ivan/downloads/PROJECT_0/content")
-	5)python3 get-pip.py
-	6) python3 -m pip install --upgrade pip setuptools virtualenv
-	7) python3 -m pip install kivy[base] 
-	8) pip3 install playsound (установка библиотеки Playsound)
-	9)pip3 install matplotlib (установка библиотеки matplotlib)
-	10)python3 __main__.py (запуск игры)
-
-
-
+<h1> РУССКИЙ </h1>
+<h2>Для запуска игры: </h2>
+<ol>
+	<li> скачать архив с гитхаба: https://github.com/just-nimay/PROJECT_0.git (нажмите кнопку "code" -> нажмите download ZIP)</li>
+	<li> установить python версии не менее 3.6</li>
+	<li> откройте консоль и введите (это уснановка библиотек для Python)</li>
+<h3>ДЛЯ LINUX</h3>
+	<li> sudo apt install python3-pip </li>
+	<li> python3 -m pip install kivy[base]<li>
+	 pip3 install playsound (установка библиотеки Playsound)
+	<li>pip3 install matplotlib (установка библиотеки matplotlib)</li>
+	<li> cd 'путь к файлу __main__.py' (например: C:/users/ivan/downloads/PROJECT_0/content/__main__.py (PROJECT_0/content/__main__.py -- это находится в архиве этого репозитория))</li>
+	<li> python3 __main__.py (запуск игры)</li>
+</ol>
+<ol start='4'>
+	<h3>ДЛЯ WINDOWS</h3>
+	<li> cd "путь к скачаной разархивированной папке content" (например: cd "C:/users/ivan/downloads/PROJECT_0/content")</li>
+	<li> python3 get-pip.py</li>
+	<li> python3 -m pip install --upgrade pip setuptools virtualenv</li>
+	<li> python3 -m pip install kivy[base] </li>
+	<li> pip3 install playsound (установка библиотеки Playsound)</li>
+	<li> pip3 install matplotlib (установка библиотеки matplotlib)</li>
+	<li> python3 __main__.py (запуск игры)</li>
+</ol>
+<h1> ENGLISH </1>
+<h2>To start the game: </h2>
+<ol>
+	<li> download the archive from github: https://github.com/just-nimay/PROJECT_0.git (click "code" -> click download ZIP)</li>
+	<li> install python version at least 3.6</li>
+	<li> open the console and type (this is the installation of libraries for Python)</li>
+	<h3>FOR LINUX</h3>
+	<li> sudo apt install python3-pip </li>
+	<li> python3 -m pip install kivy[base]<li>
+	pip3 install playsound (installing the Playsound library)
+	<li>pip3 install matplotlib (installing the matplotlib library)</li>
+	<li> cd 'file path __main__.py ' (for example: C:/users/ivan/downloads/PROJECT_0/content/__main__.py (PROJECT_0/content/__main__.py -- this is in the archive of this repository))</li>
+	<li> python3 __main__.py (starting the game)</li>
+</ol>
+<ol start='4'>
+	<h3>FOR WINDOWS</h3>
+	<li> cd "path to the downloaded unzipped content folder" (for example: cd "C:/users/ivan/downloads/PROJECT_0/content ")</li>
+	<li> python3 get-pip.py</li>
+	<li> python3 -m pip install kivy[base] </li>
+	<li> pip3 install playsound (installing the Playsound library)</li>
+	<li> pip3 install matplotlib (installing the matplotlib library)</li>
+	<li> python3 __main__.py (starting the game)</li>
+</ol>
