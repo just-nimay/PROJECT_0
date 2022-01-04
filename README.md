@@ -45,3 +45,8 @@
 	<li> pip3 install matplotlib (installing the matplotlib library)</li>
 	<li> python3 __main__.py (starting the game)</li>
 </ol>
+<h3>КОНТАКТЫ / СONTACTS</h3>
+<ul>
+	<li>почта / email: just_nimay@vk.com</li>
+	<li>телеграм / telegram: @Just_Nimay</li>
+</ul>
