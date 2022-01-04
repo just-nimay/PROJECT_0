@@ -16,7 +16,7 @@
 	<h3>ДЛЯ WINDOWS</h3>
 	<li> cd "путь к скачаной разархивированной папке content" (например: cd "C:/users/ivan/downloads/PROJECT_0/content")</li>
 	<li> python3 get-pip.py</li>
-	<li> python3 -m pip install --upgrade pip setuptools virtualenv</li>
+	<li> python3 -m pip install</li>
 	<li> python3 -m pip install kivy[base] </li>
 	<li> pip3 install playsound (установка библиотеки Playsound)</li>
 	<li> pip3 install matplotlib (установка библиотеки matplotlib)</li>
