@@ -5,7 +5,7 @@
 	<li> установить python версии не менее 3.6</li>
 	<li> откройте консоль и введите (это уснановка библиотек для Python)</li>
 <h3>ДЛЯ LINUX</h3>
-	<li> sudo apt install python3-pip </li>
+	<li><i> sudo apt install python3-pip</i> </li>
 	<li> python3 -m pip install kivy[base]<li>
 	 pip3 install playsound (установка библиотеки Playsound)
 	<li>pip3 install matplotlib (установка библиотеки matplotlib)</li>
